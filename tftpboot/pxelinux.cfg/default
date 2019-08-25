@@ -63,25 +63,17 @@ LABEL bios
                                         IPMI, RAID, and more.
   endtext
 
-LABEL memtest420
-  MENU LABEL ^Memtest86+ v4.20
-  LINUX memtest/memtest420.bin
+
+LABEL memtest86
+  MENU LABEL Mem^test86+  v5.01
+  LINUX memtest86.bin
 
   text help
+                                        Memtest86+  v5.01
                                         Memtest86+ is a free and open
-                                        memory test.  v4.20 works on
-                                        most hardware including AMD.
+                                        memory test. 
   endtext
 
-LABEL memtest501
-  MENU LABEL Mem^test86+ v5.01
-  LINUX memtest/memtest501.bin
-
-  text help
-                                        Memtest86+ v5.01 is faster
-                                        and more thorough than v4.20
-                                        but does not always work.
-  endtext
 
 LABEL client
   MENU LABEL Install ^Client Image (Coming Soon)
