@@ -1,4 +1,4 @@
-# [Setting up two or more PXE servers on the same network: WDS and GNU/Linux PXE Server](https://github.com/TechnologyClassroom/PXE/blob/master/PXEchain.md#setting-up-two-or-more-pxe-servers-on-the-same-network-wds-and-gnulinux-pxe-server)
+# [Setting up two or more PXE servers on the same network: WDS and GNU/Linux PXE Server](https://github.com/levush/PXE/blob/master/PXEchain.md#setting-up-two-or-more-pxe-servers-on-the-same-network-wds-and-gnulinux-pxe-server)
 
 Michael McMahon
 
@@ -35,7 +35,7 @@ Requirements:
 
 ## Configuring the WDS server with syslinux
 
-[wdspxechain.bat](https://github.com/TechnologyClassroom/PXE/blob/master/wdspxechain.bat)
+[wdspxechain.bat](https://github.com/levush/PXE/blob/master/wdspxechain.bat)
 is a bat script that runs through each step of this section.  The script assumes
 the second PXE server is 10.12.17.15 and would need to be modified accordingly.
 
@@ -74,7 +74,7 @@ copy C:\RemoteInstall\Boot\x64\abortpxe.com C:\RemoteInstall\Boot\x64\abortpxe.0
 
 The folder should look like this:
 
-![Screenshot](https://github.com/TechnologyClassroom/SetupNotes/blob/master/Images/PXE1.png?raw=true "Screenshot")
+![Screenshot](https://github.com/levush/SetupNotes/blob/master/Images/PXE1.png?raw=true "Screenshot")
 
 - Create a new folder C:\RemoteInstall\Boot\x64\pxelinux.cfg and make a new file
   in that folder called default.
@@ -108,7 +108,7 @@ LABEL local
   LOCALBOOT 0
 ```
 
-![Screenshot](https://github.com/TechnologyClassroom/SetupNotes/blob/master/Images/PXE2.png?raw=true "Screenshot")
+![Screenshot](https://github.com/levush/SetupNotes/blob/master/Images/PXE2.png?raw=true "Screenshot")
 
 The default first choice continues booting the WDS server as usual.  The second
 choice chains into a second PXE server.  The third choice exits PXE and boots
@@ -133,7 +133,7 @@ wdsutil /set-server /bootprogram:boot\x64\pxelinux.0 /architecture:x64
 wdsutil /set-server /N12bootprogram:boot\x64\pxelinux.0 /architecture:x64
 ```
 
-![Screenshot](https://github.com/TechnologyClassroom/SetupNotes/blob/master/Images/PXE3.png?raw=true "Screenshot")
+![Screenshot](https://github.com/levush/SetupNotes/blob/master/Images/PXE3.png?raw=true "Screenshot")
 
 If you will be using 32 bit machines, double the above steps for the \x86\
 folder and run these commands:
@@ -375,7 +375,7 @@ firewall-cmd --reload
 
 ## (Optional) Configure nginx for distributing preseed files
 
-[nginxcentos7.sh](https://github.com/TechnologyClassroom/bash/blob/master/nginxcentos7.sh)
+[nginxcentos7.sh](https://github.com/levush/bash/blob/master/nginxcentos7.sh)
 is a bash script I wrote that installs dependencies and compiles nginx from
 source.  Most guides use elrepo to install nginx, but I try to only use the
 default repositories when I can.
