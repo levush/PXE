@@ -5,13 +5,14 @@ PROMPT 0
 TIMEOUT 300 # 30 seconds
 MENU IMMEDIATE
 
-LABEL hwtest
-  MENU LABEL Test ^Hardware (Coming Soon)
+LABEL bist
+  MENU LABEL ^BIST (Build In Self Test)
+  KERNEL menu.c32
+  APPEND pxelinux.cfg/bist.cfg
 
   text help
-                                        This menu will load a live OS
-                                        that will run a series of HW
-                                        tests on systems in the future.
+                                        This menu will load a menue
+                                        of basic pxe-server build-in tests
   endtext
 
 LABEL deb
